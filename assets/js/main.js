@@ -4,6 +4,27 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+//  Navbar toggle for mobile menu
+
+document.addEventListener("DOMContentLoaded", function () {
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('-translate-x-full');
+      mobileMenu.classList.toggle('-translate-x-full');
+
+      menuIcon.classList.toggle('hidden', !isOpen);
+      closeIcon.classList.toggle('hidden', isOpen);
+    });
+  }
+});
+
+// Navbar toggle for mobile menu end
+
 (function() {
   "use strict";
 

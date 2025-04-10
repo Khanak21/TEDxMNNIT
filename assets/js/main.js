@@ -5,7 +5,21 @@
 * License: https://bootstrapmade.com/license/
 */
 //  Navbar toggle for mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+  const currentURL = window.location.href;
+  const links = document.querySelectorAll(".mobile-link");
 
+  links.forEach(link => {
+    const href = link.href;
+
+    if (currentURL.includes(href)) {
+      const cut = document.createElement("div");
+      cut.className = "absolute top-[18px] left-1/2 transform -translate-x-1/2 w-[130%] h-1 bg-[#FF2B06] rounded-full shadow-md";
+      link.classList.add("font-extrabold");
+      link.appendChild(cut);
+    }
+  });
+});
 document.addEventListener("DOMContentLoaded", function () {
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
@@ -19,6 +33,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
       menuIcon.classList.toggle('hidden', !isOpen);
       closeIcon.classList.toggle('hidden', isOpen);
+
+      document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     });
   }
 });

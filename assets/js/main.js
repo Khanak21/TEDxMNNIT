@@ -4,6 +4,48 @@
 * Author: BootstrapMade.com
 * License: https://bootstrapmade.com/license/
 */
+//  Navbar toggle for mobile menu
+document.addEventListener("DOMContentLoaded", function () {
+  const currentURL = window.location.href;
+  const links = document.querySelectorAll(".mobile-link");
+
+  links.forEach(link => {
+    const href = link.href;
+    if (currentURL.includes(href)) {
+      link.classList.add("font-extrabold", "text-[#E62B1E]");
+    }
+  });
+
+  const menuToggle = document.getElementById('menuToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuIcon = document.getElementById('menuIcon');
+  const closeIcon = document.getElementById('closeIcon');
+
+  if (menuToggle) {
+    menuToggle.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('-translate-x-full');
+      mobileMenu.classList.toggle('-translate-x-full');
+      menuIcon.classList.toggle('hidden', !isOpen);
+      closeIcon.classList.toggle('hidden', isOpen);
+      document.body.style.overflow = isOpen ? 'auto' : 'hidden';
+    });
+  }
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('-translate-x-full')) {
+        mobileMenu.classList.add('-translate-x-full');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
+});
+
+
+// Navbar toggle for mobile menu end
+
 (function() {
   "use strict";
 

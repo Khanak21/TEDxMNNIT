@@ -11,16 +11,11 @@ document.addEventListener("DOMContentLoaded", function () {
 
   links.forEach(link => {
     const href = link.href;
-
     if (currentURL.includes(href)) {
-      const cut = document.createElement("div");
-      cut.className = "absolute top-[18px] left-1/2 transform -translate-x-1/2 w-[130%] h-1 bg-[#FF2B06] rounded-full shadow-md";
-      link.classList.add("font-extrabold");
-      link.appendChild(cut);
+      link.classList.add("font-extrabold", "text-[#FF2B06]", "dark:text-orange-400");
     }
   });
-});
-document.addEventListener("DOMContentLoaded", function () {
+
   const menuToggle = document.getElementById('menuToggle');
   const mobileMenu = document.getElementById('mobileMenu');
   const menuIcon = document.getElementById('menuIcon');
@@ -30,14 +25,24 @@ document.addEventListener("DOMContentLoaded", function () {
     menuToggle.addEventListener('click', () => {
       const isOpen = !mobileMenu.classList.contains('-translate-x-full');
       mobileMenu.classList.toggle('-translate-x-full');
-
       menuIcon.classList.toggle('hidden', !isOpen);
       closeIcon.classList.toggle('hidden', isOpen);
-
       document.body.style.overflow = isOpen ? 'auto' : 'hidden';
     });
   }
+
+  links.forEach(link => {
+    link.addEventListener('click', () => {
+      if (!mobileMenu.classList.contains('-translate-x-full')) {
+        mobileMenu.classList.add('-translate-x-full');
+        menuIcon.classList.remove('hidden');
+        closeIcon.classList.add('hidden');
+        document.body.style.overflow = 'auto';
+      }
+    });
+  });
 });
+
 
 // Navbar toggle for mobile menu end
 

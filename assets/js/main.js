@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", function () {
   links.forEach(link => {
     const href = link.href;
     if (currentURL.includes(href)) {
-      link.classList.add("font-extrabold", "text-[#FF2B06]", "dark:text-orange-400");
+      link.classList.add("font-extrabold", "text-[#E62B1E]");
     }
   });
 

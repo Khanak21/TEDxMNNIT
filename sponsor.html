@@ -24,6 +24,10 @@
 			rel="stylesheet"
 		/>
 
+		<style>
+			@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Lato:wght@400;700;900&family=Playfair+Display&display=swap");
+		</style>
+
 		<!-- Vendor CSS Files -->
 		<link href="assets/vendor/aos/aos.css" rel="stylesheet" />
 		<link
@@ -56,47 +60,68 @@
 			href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
 			rel="stylesheet"
 		/>
+		<script src="https://cdn.tailwindcss.com"></script>
 	</head>
 
 	<body>
 		<div class="vats" id="vats"></div>
 
 		<!-- ======= Header ======= -->
-		<header id="header" class="d-flex align-items-center">
-			<div class="container d-flex align-items-center justify-content-between">
-				<nav id="navbar" class="navbar">
-					<ul>
-						<li><a class="nav-link scrollto" href="index.html">About</a></li>
-						<li><a class="nav-link scrollto" href="team.html">Team</a></li>
-						<li><a class="nav-link scrollto" href="#">Sponsors</a></li>
-						<li>
-							<h1 class="logo hello">
-								<img
-									id="optionalstuff"
-									src="assets/img/tedxmnnit logo.png"
-									alt=""
-								/>
-							</h1>
-						</li>
-						<li>
-							<a class="nav-link scrollto" href="index.html">Past Events</a>
-						</li>
-						<li><a class="nav-link scrollto" href="index.html">Gallery</a></li>
-						<li>
-							<a
-								class="nav-link scrollto buy"
-								style="border: 2px solid black"
-								href="index.html"
-								>Buy Tickets</a
-							>
-						</li>
-					</ul>
-					<i class="bi bi-list mobile-nav-toggle"></i>
-				</nav>
-				<!-- .navbar -->
-			</div>
-		</header>
-		<!-- End Header -->
+<header class="bg-white bg-opacity-95 fixed top-0 left-0 right-0 z-50 h-[70px] flex items-center shadow-md font-[Lato]">
+	<div class="w-full max-w-7xl mx-auto px-4 flex justify-between items-center">
+  
+	  <!-- Mobile Menu Button -->
+	  <button id="menuToggle" class="text-red-600 text-3xl lg:hidden z-50">
+		<svg id="menuIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 transition-transform duration-300">
+		  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 8h16M4 16h16" />
+		</svg>
+		<svg id="closeIcon" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-8 h-8 hidden transition-transform duration-300">
+		  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+		</svg>
+	  </button>
+  
+	  <!-- Left Nav Links -->
+	  <nav class="hidden lg:flex items-center xl:space-x-14 md:space-x-7">
+		<a href="index.html" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">Home</a>
+		<a href="index.html#about" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">About</a>
+		<a href="team.html" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">Team</a>
+	  </nav>
+  
+	  <!-- Center Logo -->
+	  <div class="flex justify-center items-center">
+		<img src="assets/img/tedxmnnit logo.png" alt="Logo" class="h-10 block" />
+	  </div>
+  
+	  <!-- Right Nav Links -->
+	  <nav class="hidden lg:flex items-center xl:space-x-14 md:space-x-7">
+		<a href="index.html#past-team" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">Past Events</a>
+		<a href="index.html#portfolio" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">Gallery</a>
+		<a href="sponsor.html" class="text-black text-[18px] font-medium px-6 py-2 hover:bg-[#E62B1E] hover:!text-white transition duration-300 rounded">Sponsors</a>
+		<!-- <a href="#buy-ticket" class="hidden ml-2 px-5 py-2 bg-orange-500 !text-white rounded-md hover:bg-orange-600 transition duration-300">Buy Ticket</a> -->
+	  </nav>
+	</div>
+  </header>
+  
+  <!-- Spacer -->
+  <div class="h-[70px]"></div>
+  <div id="mobileMenu"
+  class="fixed font-[Lato] top-[5vh] left-0 w-full h-screen bg-white text-center flex flex-col justify-center items-center gap-6 transform -translate-x-full transition-transform duration-500 ease-in-out z-40 lg:hidden">
+
+  <a href="index.html" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">Home</a>
+  <a href="index.html#about" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">About</a>
+  <a href="team.html" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">Team</a>
+  <a href="index.html#past-team" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">Past Events</a>
+  <a href="index.html#portfolio" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">Gallery</a>
+  <a href="sponsor.html" class="mobile-link  text-gray-800 text-3xl font-semibold relative transition duration-300">Sponsors</a>
+
+  <!-- Buy Ticket Button -->
+  <a href="#buy-ticket"
+     class="mt-8 px-7 mobile-link py-3 bg-[#E62B1E] text-white text-3xl font-bold rounded-lg shadow-[inset_0_-4px_10px_rgba(0,0,0,0.2),0_4px_20px_rgba(255,43,6,0.4)] transition duration-500 hover:scale-105">
+     Buy Ticket
+  </a>
+  <div class="h-[7vh]"></div>
+</div>
+<!-- End Header -->
 
 		<link
 			href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
